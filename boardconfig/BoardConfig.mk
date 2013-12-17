@@ -30,8 +30,15 @@
 #
 
 
+#Galaxy S2 HD LTE - e120l
+ifeq ($(TARGET_PRODUCT), cm_e120l)
+    TARGET_COMMON_NAME := e120l
+    BOOTLOADER_CMD_ARG := "download"
+    BOARD_UMS_LUNFILE := "/sys/devices/virtual/android_usb/android0/f_mass_storage/lun%d/file"
+    BRIGHTNESS_SYS_FILE := "/sys/class/backlight/panel/brightness"
+
 #Galaxy S2 International - i9100
-ifeq ($(TARGET_PRODUCT), cm_i9100)
+else ifeq ($(TARGET_PRODUCT), cm_i9100)
     TARGET_COMMON_NAME := i9100
     BOOTLOADER_CMD_ARG := "download"
     BOARD_UMS_LUNFILE := "/sys/devices/virtual/android_usb/android0/f_mass_storage/lun%d/file"
